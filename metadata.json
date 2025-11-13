@@ -1,0 +1,5 @@
+{
+  "name": "Utility Calculator",
+  "description": "A versatile calculator web app to compute averages from a list of numbers and compare the value for money between two products based on their price and quantity.",
+  "requestFramePermissions": []
+}
