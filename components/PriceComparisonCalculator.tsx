@@ -145,7 +145,12 @@ const PriceComparisonCalculator: React.FC = () => {
 
   return (
     <div className="flex flex-col space-y-6 animate-fade-in">
-      <h2 className="text-2xl font-bold text-cyan-400 text-center">เปรียบเทียบราคา อันไหนคุ้มกว่า?</h2>
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-cyan-400">Price Comparison</h2>
+        <p className="mt-2 text-slate-400 max-w-md mx-auto">
+          เปรียบเทียบราคาต่อหน่วยของสินค้าแต่ละชิ้น อันไหนคุ้มกว่า?
+        </p>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {items.map((item, index) => (
@@ -191,7 +196,7 @@ const PriceComparisonCalculator: React.FC = () => {
         onClick={handleClear}
         className="w-full sm:w-1/2 mx-auto bg-slate-600 text-slate-200 font-bold py-3 px-4 rounded-lg hover:bg-slate-500 transition-colors"
       >
-        ล้างข้อมูลทั้งหมด
+        Reset
       </button>
     </div>
   );

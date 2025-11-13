@@ -18,7 +18,7 @@ const AverageCalculator: React.FC = () => {
     setResult(null);
 
     if (!inputValue.trim()) {
-      setError('กรุณาป้อนตัวเลขอย่างน้อยหนึ่งตัว');
+      setError('Please enter at least one valid number.');
       return;
     }
 
@@ -51,7 +51,12 @@ const AverageCalculator: React.FC = () => {
 
   return (
     <div className="flex flex-col space-y-6 animate-fade-in">
-      <h2 className="text-2xl font-bold text-cyan-400 text-center">คำนวณหาค่าเฉลี่ย</h2>
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-cyan-400">Average Value Calculator</h2>
+        <p className="mt-2 text-slate-400 max-w-md mx-auto">
+          คำนวณหาค่าเฉลี่ย โดยการป้อนตัวเลขลงไป
+        </p>
+      </div>
       
       <div>
         <label htmlFor="numbers-input" className="block mb-2 text-sm font-medium text-slate-400">
@@ -73,13 +78,13 @@ const AverageCalculator: React.FC = () => {
           className="w-full bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-cyan-700 transition-colors flex items-center justify-center gap-2"
         >
           <CalculatorIcon />
-          <span>คำนวณ</span>
+          <span>Calculate Average</span>
         </button>
         <button
           onClick={handleClear}
           className="w-full bg-slate-600 text-slate-200 font-bold py-3 px-4 rounded-lg hover:bg-slate-500 transition-colors"
         >
-          ล้างข้อมูล
+          Reset
         </button>
       </div>
 
@@ -91,19 +96,19 @@ const AverageCalculator: React.FC = () => {
 
       {result && (
         <div className="bg-slate-700/50 p-6 rounded-lg space-y-4 animate-fade-in-up">
-          <h3 className="text-xl font-semibold text-center text-white">ผลการคำนวณ</h3>
+          <h3 className="text-xl font-semibold text-center text-white">Result</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <p className="text-sm text-slate-400">จำนวนทั้งหมด</p>
-              <p className="text-2xl font-bold text-white">{result.count}</p>
+            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-lg">
+              <p className="text-sm font-medium text-white/90">Average</p>
+              <p className="text-2xl font-bold text-white">{result.average.toLocaleString()}</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
-              <p className="text-sm text-slate-400">ผลรวม</p>
+              <p className="text-sm text-slate-400">Sum</p>
               <p className="text-2xl font-bold text-white">{result.sum.toLocaleString()}</p>
             </div>
-            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-lg">
-              <p className="text-sm font-medium text-white/90">ค่าเฉลี่ย</p>
-              <p className="text-2xl font-bold text-white">{result.average.toLocaleString()}</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <p className="text-sm text-slate-400">Count</p>
+              <p className="text-2xl font-bold text-white">{result.count}</p>
             </div>
           </div>
         </div>
