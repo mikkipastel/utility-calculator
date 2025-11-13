@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import AverageCalculator from './components/AverageCalculator';
 import PriceComparisonCalculator from './components/PriceComparisonCalculator';
+import { LogoIcon } from './components/icons/LogoIcon';
 
 type CalculatorMode = 'average' | 'compare';
 
@@ -16,6 +17,9 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-200 flex flex-col items-center p-4 sm:p-6 md:p-8">
       <header className="text-center mb-8">
+        <div className="flex justify-center mb-4">
+          <LogoIcon />
+        </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
           Utility Calculator
         </h1>
