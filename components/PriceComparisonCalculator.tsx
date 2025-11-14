@@ -34,7 +34,7 @@ const PriceComparisonCalculator: React.FC = () => {
       if (isNaN(price) || isNaN(quantity) || quantity <= 0) {
         return { label, unitPriceText: 'N/A' };
       }
-      return { label, unitPriceText: `${(price / quantity).toFixed(2)} บาท/หน่วย` };
+      return { label, unitPriceText: `${(price / quantity).toFixed(2)} baht/unit` };
     });
 
     if (itemsWithUnitPrices.length < 2) {
@@ -115,10 +115,10 @@ const PriceComparisonCalculator: React.FC = () => {
           <TrashIcon />
         </button>
       )}
-      <h3 className="text-lg font-semibold text-white mb-3">{`สินค้า ${String.fromCharCode(65 + index)}`}</h3>
+      <h3 className="text-lg font-semibold text-white mb-3">{`Item ${String.fromCharCode(65 + index)}`}</h3>
       <div className="space-y-3">
         <div>
-          <label className="text-sm text-slate-400">ราคา (บาท)</label>
+          <label className="text-sm text-slate-400">price (baht)</label>
           <input
             type="number"
             min="0"
@@ -129,7 +129,7 @@ const PriceComparisonCalculator: React.FC = () => {
           />
         </div>
         <div>
-          <label className="text-sm text-slate-400">ปริมาณ (หน่วย/กรัม/มล.)</label>
+          <label className="text-sm text-slate-400">quantity (unit/g/ml.)</label>
           <input
             type="number"
             min="0"
@@ -170,7 +170,7 @@ const PriceComparisonCalculator: React.FC = () => {
           className="w-full bg-slate-700 text-cyan-400 font-bold py-3 px-4 rounded-lg hover:bg-slate-600 border-2 border-dashed border-slate-600 hover:border-cyan-500 transition-all flex items-center justify-center gap-2"
         >
           <PlusIcon />
-          <span>เพิ่มรายการ</span>
+          <span>Add Item</span>
         </button>
 
       <div className="bg-slate-700 p-4 rounded-lg min-h-[100px] flex flex-col justify-center items-center text-center">

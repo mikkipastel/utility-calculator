@@ -10,8 +10,8 @@ const App: React.FC = () => {
   const [mode, setMode] = useState<CalculatorMode>('average');
 
   const navItems = [
-    { id: 'compare', label: 'เปรียบเทียบราคา' },
-    { id: 'average', label: 'คำนวณค่าเฉลี่ย' },
+    { id: 'compare', label: 'Price Comparison' },
+    { id: 'average', label: 'Average Calculator' },
   ];
 
   return (
@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
           Utility Calculator
         </h1>
-        <p className="text-slate-400 mt-2 text-lg">เครื่องมือช่วยตัดสินใจในชีวิตประจำวัน</p>
+        <p className="text-slate-400 mt-2 text-lg">Quick tools for smart decisions</p>
       </header>
 
       <main className="w-full max-w-2xl">

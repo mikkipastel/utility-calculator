@@ -60,14 +60,14 @@ const AverageCalculator: React.FC = () => {
       
       <div>
         <label htmlFor="numbers-input" className="block mb-2 text-sm font-medium text-slate-400">
-          ป้อนตัวเลขโดยคั่นด้วยช่องว่าง (space) หรือจุลภาค (comma)
+          Enter numbers separated by commas or spaces to find their average.
         </label>
         <textarea
           id="numbers-input"
           rows={4}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="เช่น 10 25 15.5 8, 42"
+          placeholder="ex. 10 25 15.5 8, 42"
           className="w-full bg-slate-700 border border-slate-600 rounded-lg p-3 text-slate-200 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors"
         />
       </div>
